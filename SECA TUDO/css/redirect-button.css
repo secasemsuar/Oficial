@@ -1,0 +1,192 @@
+/* Estilos para o botão único de redirecionamento */
+
+.redirect-cta-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.redirect-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+    z-index: 0;
+}
+
+.redirect-cta-container {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.redirect-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #ff3300 0%, #cc0000 100%);
+    color: white;
+    text-decoration: none;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: pulse-redirect 2s infinite;
+}
+
+.redirect-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.redirect-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ff4400 0%, #dd0000 100%);
+}
+
+.redirect-button:hover::before {
+    left: 100%;
+}
+
+.redirect-button:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
+}
+
+.redirect-button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.redirect-button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.redirect-button:hover .redirect-button-icon {
+    transform: translateX(5px);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes pulse-redirect {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2);
+    }
+}
+
+/* Efeito de destaque ao desbloquear o conteúdo */
+.unlocked .redirect-cta-section {
+    animation: highlight-cta 1s ease;
+}
+
+@keyframes highlight-cta {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+}
+
+/* Responsividade para o botão de redirecionamento */
+@media (max-width: 767px) {
+    .redirect-button {
+        padding: 15px 30px;
+        font-size: 20px;
+    }
+    
+    .redirect-cta-section {
+        padding: 40px 20px;
+        margin: 30px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .redirect-button {
+        padding: 15px 25px;
+        font-size: 18px;
+        width: 100%;
+    }
+    
+    .redirect-button-icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Efeito de flutuação para chamar mais atenção */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Adicionar efeito de destaque ao botão quando o vídeo terminar */
+.video-completed .redirect-button {
+    animation: attention-pulse 1.5s ease-in-out 3;
+}
+
+@keyframes attention-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

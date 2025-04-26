@@ -1,0 +1,312 @@
+/* Atualização do estilo da imagem do produto */
+.product-image {
+    width: 100%;
+    height: 300px;
+    background-image: url('../images/ebook-cover.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 20px auto;
+    position: relative;
+}
+
+/* Melhorias visuais para os testemunhos */
+.testimonial-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Ajuste para garantir que o selo de garantia apareça corretamente */
+.guarantee-seal {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* ===== AJUSTES RESPONSIVOS APRIMORADOS ===== */
+
+/* Ajustes para tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .main-headline {
+        font-size: 36px;
+        line-height: 1.3;
+    }
+    
+    .sub-headline {
+        font-size: 24px;
+    }
+    
+    .chapters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonial-item {
+        flex: 0 0 70%;
+    }
+    
+    .testimonial-image {
+        height: 180px;
+    }
+}
+
+/* Ajustes para smartphones grandes (481px - 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .main-headline {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+    
+    .sub-headline {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .timer-warning {
+        font-size: 16px;
+    }
+    
+    #countdown, #finalCountdown {
+        font-size: 18px;
+    }
+    
+    .product-image {
+        height: 250px;
+    }
+    
+    .benefits {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .benefit-item {
+        padding: 10px;
+    }
+    
+    .pain-section li {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-item {
+        flex: 0 0 90%;
+        padding: 15px;
+    }
+    
+    .testimonial-image {
+        height: 150px;
+    }
+    
+    .chapters {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .chapter {
+        padding: 15px;
+    }
+    
+    .chapter-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .authority-quote {
+        font-size: 18px;
+    }
+    
+    .current-price {
+        font-size: 30px;
+    }
+    
+    .cta-button {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+    
+    .payment-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .payment-option {
+        padding: 10px;
+    }
+    
+    .faq-question h4 {
+        font-size: 16px;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-links a {
+        margin: 0;
+    }
+}
+
+/* Ajustes para smartphones pequenos (até 480px) */
+@media (max-width: 480px) {
+    .main-headline {
+        font-size: 24px;
+    }
+    
+    .sub-headline {
+        font-size: 18px;
+    }
+    
+    .timer-warning {
+        font-size: 14px;
+    }
+    
+    #countdown, #finalCountdown {
+        font-size: 16px;
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .testimonial-before-after {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .testimonial-image {
+        width: 100%;
+        height: 180px;
+    }
+    
+    .chapter h4 {
+        font-size: 16px;
+    }
+    
+    .chapter p {
+        font-size: 14px;
+    }
+    
+    .guarantee {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .guarantee p {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .form-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .checkout-button {
+        font-size: 18px;
+        padding: 12px;
+    }
+    
+    .notification {
+        max-width: 250px;
+    }
+}
+
+/* Ajustes para melhorar a experiência de toque em dispositivos móveis */
+@media (max-width: 991px) {
+    /* Aumentar área de toque para elementos interativos */
+    .cta-button, 
+    .checkout-button, 
+    .payment-option, 
+    .faq-question {
+        min-height: 44px; /* Tamanho mínimo recomendado para área de toque */
+    }
+    
+    /* Melhorar espaçamento para facilitar o toque */
+    .form-group input {
+        min-height: 44px;
+    }
+    
+    /* Garantir que o FAQ seja fácil de tocar */
+    .faq-question {
+        padding: 15px 10px;
+    }
+    
+    /* Melhorar visibilidade do botão de finalizar compra */
+    .checkout-button {
+        margin-top: 25px;
+        padding: 15px;
+    }
+    
+    /* Fixar notificações para não atrapalhar em telas pequenas */
+    .live-notifications {
+        bottom: 10px;
+        left: 10px;
+        max-width: 80%;
+    }
+}
+
+/* Ajustes para orientação paisagem em dispositivos móveis */
+@media (max-width: 991px) and (orientation: landscape) {
+    .product-image {
+        height: 180px;
+    }
+    
+    .testimonial-before-after {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .testimonial-image {
+        height: 120px;
+    }
+    
+    .chapters {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Ajustes para telas de alta densidade (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .product-image, .testimonial-image {
+        background-size: contain;
+    }
+}
+
+/* Melhorias de acessibilidade para toque */
+.cta-button:active, 
+.checkout-button:active, 
+.payment-option:active, 
+.faq-question:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
+}
+
+/* Melhorias de desempenho para animações em dispositivos móveis */
+@media (max-width: 767px) {
+    .pulse {
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.03);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}

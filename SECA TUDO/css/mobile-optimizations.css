@@ -1,0 +1,200 @@
+/* Meta tag para garantir renderização correta em dispositivos móveis */
+@-ms-viewport {
+    width: device-width;
+}
+
+/* Ajustes para melhorar a experiência em dispositivos móveis */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Ajustes para o viewport em dispositivos móveis */
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Melhorias para inputs em dispositivos móveis */
+input, 
+textarea, 
+button, 
+select {
+    font-size: 16px; /* Evita zoom automático em iOS */
+    -webkit-appearance: none; /* Remove estilo padrão em iOS */
+    border-radius: 0; /* Corrige bordas arredondadas em iOS */
+}
+
+/* Melhorias para botões em dispositivos móveis */
+button, 
+.cta-button, 
+.checkout-button {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Remove highlight ao tocar */
+}
+
+/* Ajustes para imagens em dispositivos móveis */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ajustes para o slider de testemunhos em dispositivos móveis */
+.testimonial-slider {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.testimonial-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Indicadores visuais para o slider em dispositivos móveis */
+.testimonial-slider::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ajustes para o FAQ em dispositivos móveis */
+.faq-question {
+    position: relative;
+}
+
+.faq-question::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Melhorias para o formulário em dispositivos móveis */
+@media (max-width: 767px) {
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    
+    /* Ajuste para teclado virtual */
+    .checkout {
+        padding-bottom: 60px;
+    }
+    
+    /* Melhorar visibilidade do botão de finalizar */
+    .checkout-button {
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 5px 15px rgba(0, 204, 0, 0.6);
+    }
+    
+    /* Ajustes para o contador em telas pequenas */
+    .timer-container {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+}
+
+/* Ajustes específicos para iPhone SE e dispositivos muito pequenos */
+@media (max-width: 375px) {
+    .main-headline {
+        font-size: 22px;
+    }
+    
+    .sub-headline {
+        font-size: 16px;
+    }
+    
+    .product-image {
+        height: 180px;
+    }
+    
+    .benefit-item i {
+        font-size: 24px;
+    }
+    
+    .chapter-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .chapter-icon i {
+        font-size: 18px;
+    }
+    
+    .guarantee-seal {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Ajustes para dispositivos com tela grande */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    
+    .product-image {
+        height: 350px;
+    }
+    
+    .testimonial-item {
+        flex: 0 0 30%;
+    }
+}
+
+/* Ajustes para orientação paisagem em dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-headline {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    
+    .sub-headline {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .product-image {
+        height: 120px;
+        margin: 10px auto;
+    }
+    
+    .benefits {
+        padding: 10px;
+        margin: 10px 0;
+    }
+    
+    .pain-section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .testimonials, .ebook-content, .pricing, .faq {
+        padding: 20px 0;
+    }
+}
+
+/* Melhorias de desempenho para animações */
+@media (prefers-reduced-motion: reduce) {
+    .pulse {
+        animation: none;
+    }
+    
+    .cta-button:hover, .checkout-button:hover {
+        transform: none;
+    }
+}
